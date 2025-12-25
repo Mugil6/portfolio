@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mugilan | Data Engineer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* --- HIGH-END DARK THEME CSS --- */
         :root {
@@ -16,7 +16,6 @@
             --accent: #38bdf8;        /* Sky Blue */
             --accent-glow: rgba(56, 189, 248, 0.15);
             --border: #334155;
-            --gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
 
         * {
@@ -31,6 +30,26 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; /* Prevents side scroll from the glow */
+
+            /* --- UPGRADE 1: Engineering Grid Background --- */
+            background-image: 
+                linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-attachment: fixed;
+        }
+
+        /* --- UPGRADE 2: Hero Glow (Ambient Light) --- */
+        .hero-glow {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(11, 17, 32, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
         }
 
         /* Layout */
@@ -38,6 +57,7 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 0 1.5rem;
+            position: relative;
         }
 
         /* Hero Section */
@@ -45,17 +65,22 @@
             padding: 6rem 0 4rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
-            background: radial-gradient(circle at top right, #1e293b 0%, transparent 40%);
+            /* Subtle spotlight effect on header */
+            background: radial-gradient(circle at top center, rgba(30, 41, 59, 0.3) 0%, transparent 70%);
         }
 
+        /* --- UPGRADE 3: Gradient Name --- */
         h1 {
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -1.5px;
             margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, #94a3b8);
+            
+            /* Metallic Gradient Text */
+            background: linear-gradient(to right, #f8fafc 20%, #38bdf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         .role {
@@ -92,22 +117,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-resume {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .btn-resume:hover {
-            background: var(--accent-glow);
-        }
-
         /* Sections */
         section {
             padding: 4rem 0;
@@ -130,20 +139,26 @@
             opacity: 0.5;
         }
 
-        /* Project Cards */
+        /* --- UPGRADE 4: Glassmorphism Project Cards --- */
         .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            /* Semi-transparent background */
+            background: rgba(30, 41, 59, 0.4); 
+            /* Blur effect behind the card */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            
+            border: 1px solid rgba(56, 189, 248, 0.1);
             border-radius: 12px;
             padding: 2rem;
             margin-bottom: 3rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            transition: transform 0.2s ease, border-color 0.2s;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
         }
 
         .project-card:hover {
             transform: translateY(-4px);
             border-color: var(--accent);
+            box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.15);
         }
 
         .project-header {
@@ -266,6 +281,8 @@
     </style>
 </head>
 <body>
+
+    <div class="hero-glow"></div>
 
     <div class="container">
         <header>
