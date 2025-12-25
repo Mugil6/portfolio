@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mugilan | Data Engineer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- HIGH-END DARK THEME CSS --- */
+        :root {
+            --bg-dark: #0b1120;       /* Deepest Navy */
+            --bg-card: #1e293b;       /* Slate */
+            --text-main: #f8fafc;     /* White-ish */
+            --text-muted: #94a3b8;    /* Muted Grey */
+            --accent: #38bdf8;        /* Sky Blue */
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border: #334155;
+            --gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 6rem 0 4rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            background: radial-gradient(circle at top right, #1e293b 0%, transparent 40%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .role {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        /* Buttons & Socials */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-resume {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-resume:hover {
+            background: var(--accent-glow);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+            opacity: 0.5;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, border-color 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .project-links a {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tech Stack Pills */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack span {
+            background: rgba(148, 163, 184, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .description strong {
+            color: var(--text-main);
+        }
+
+        .project-img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 1rem;
+            transition: opacity 0.3s;
+        }
+        
+        .project-img:hover {
+            opacity: 0.95;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-group h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .skill-list li i {
+            color: var(--text-main);
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            header { padding: 4rem 0 2rem; }
+            .project-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Mugilan [Last Name]</h1>
+            
+            <div class="role">Data Engineer | PySpark & Scalable Data Pipelines</div>
+            
+            <p class="tagline">
+                Expertise in designing <strong>scalable, cost-optimized data architectures</strong> on AWS and building <strong>high-efficiency ETL workflows</strong>.
+                <br>Specialized in Python performance optimization for both <strong>Cloud Lakehouses</strong> and <strong>Unstructured Data Processing</strong>.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mugilan-m-49882531a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Mugil6" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:mugilanmg98@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </header>
+
+        <section id="projects">
+            <h2>01. Featured Projects</h2>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🌍 Real-Time Global Earthquake Data Lakehouse</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/Mugil6/earthquake-tracker" target="_blank"><i class="fab fa-github"></i> View Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <span>PySpark</span>
+                    <span>Databricks</span>
+                    <span>Delta Lake</span>
+                </div>
+
+                <div class="description">
+                    <p>Designed a <strong>Medallion Architecture</strong> (Bronze → Silver → Gold) to ingest live seismic data. 
+                    <br><strong>Key Engineering:</strong> Built a <strong>Databricks-native ingestion pipeline</strong> to fetch live API data, transforming <strong>complex nested GeoJSON</strong> into structured Delta tables for high-performance analytics.</p>
+                </div>
+
+                <img src="images/earthquake_arch.png" alt="Data Lakehouse Architecture Diagram" class="project-img">
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🛸 Autonomous Drone Perception System</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/Mugil6/deep_learning_model" target="_blank"><i class="fab fa-github"></i> View Source Code</a>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>YOLOv8</span>
+                    <span>CUDA</span>
+                    <span>Edge Computing</span>
+                    <span>Computer Vision</span>
+                </div>
+
+                <div class="description">
+                    <p>
+                        Developed a real-time object detection and avoidance system for edge devices.
+                        <br><strong>Key Achievement:</strong> As seen in the output below, the system identifies objects (Cars/Buses) and calculates logic (<strong>"Action: Avoid"</strong>) in real-time while maintaining a stable <strong>17+ FPS</strong> on limited hardware using FP16 quantization.
+                    </p>
+                </div>
+
+                <img src="images/drone_output.png" alt="Drone Detection Output with FPS Counter" class="project-img">
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>02. Technical Arsenal</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-group">
+                    <h3>Languages & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                        <li><i class="fas fa-fire"></i> Apache Spark / PySpark</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Cloud & Platforms (AWS)</h3>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-aws"></i> AWS (S3, Lambda, EMR)</li>
+                        <li><i class="fas fa-layer-group"></i> Databricks & Delta Lake</li>
+                        <li><i class="fas fa-server"></i> Redshift / Data Warehousing</li>
+                        <li><i class="fas fa-search"></i> Athena & Glue</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Tools & DevOps</h3>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                        <li><i class="fab fa-docker"></i> Docker (Containerization)</li>
+                        <li><i class="fas fa-wind"></i> Apache Airflow (Orchestration)</li>
+                        <li><i class="fas fa-terminal"></i> Linux / Shell Scripting</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+
+        <footer>
+            <p>Designed & Built by Mugilan. © 2025</p>
+        </footer>
+    </div>
+
+</body>
+</html>
