@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mugilan | Data Engineer Portfolio</title>
+    <title>Mugilan | Data & MLOps Engineer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -30,9 +30,8 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden; /* Prevents side scroll from the glow */
+            overflow-x: hidden;
 
-            /* --- UPGRADE 1: Engineering Grid Background --- */
             background-image: 
                 linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px), 
                 linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
@@ -40,7 +39,6 @@
             background-attachment: fixed;
         }
 
-        /* --- UPGRADE 2: Hero Glow (Ambient Light) --- */
         .hero-glow {
             position: absolute;
             top: -100px;
@@ -52,7 +50,6 @@
             pointer-events: none;
         }
 
-        /* Layout */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -60,23 +57,18 @@
             position: relative;
         }
 
-        /* Hero Section */
         header {
             padding: 6rem 0 4rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
-            /* Subtle spotlight effect on header */
             background: radial-gradient(circle at top center, rgba(30, 41, 59, 0.3) 0%, transparent 70%);
         }
 
-        /* --- UPGRADE 3: Gradient Name --- */
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
             letter-spacing: -1.5px;
             margin-bottom: 0.5rem;
-            
-            /* Metallic Gradient Text */
             background: linear-gradient(to right, #f8fafc 20%, #38bdf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -99,7 +91,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Buttons & Socials */
         .social-links {
             display: flex;
             gap: 1.5rem;
@@ -117,10 +108,7 @@
             transform: translateY(-2px);
         }
 
-        /* Sections */
-        section {
-            padding: 4rem 0;
-        }
+        section { padding: 4rem 0; }
 
         h2 {
             font-size: 1.75rem;
@@ -139,26 +127,20 @@
             opacity: 0.5;
         }
 
-        /* --- UPGRADE 4: Glassmorphism Project Cards --- */
         .project-card {
-            /* Semi-transparent background */
             background: rgba(30, 41, 59, 0.4); 
-            /* Blur effect behind the card */
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            
             border: 1px solid rgba(56, 189, 248, 0.1);
             border-radius: 12px;
             padding: 2rem;
             margin-bottom: 3rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s ease, border-color 0.2s;
         }
 
         .project-card:hover {
             transform: translateY(-4px);
             border-color: var(--accent);
-            box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.15);
         }
 
         .project-header {
@@ -185,11 +167,6 @@
             gap: 5px;
         }
 
-        .project-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Tech Stack Pills */
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -213,23 +190,13 @@
             font-size: 1rem;
         }
 
-        .description strong {
-            color: var(--text-main);
-        }
-
         .project-img {
             width: 100%;
             border-radius: 8px;
             border: 1px solid var(--border);
             margin-top: 1rem;
-            transition: opacity 0.3s;
-        }
-        
-        .project-img:hover {
-            opacity: 0.95;
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -241,12 +208,9 @@
             color: var(--accent);
             margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
-        .skill-list {
-            list-style: none;
-        }
+        .skill-list { list-style: none; }
 
         .skill-list li {
             margin-bottom: 0.5rem;
@@ -257,13 +221,6 @@
             font-size: 0.95rem;
         }
 
-        .skill-list li i {
-            color: var(--text-main);
-            width: 20px;
-            text-align: center;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 3rem 0;
@@ -271,12 +228,6 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border);
             margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            header { padding: 4rem 0 2rem; }
-            .project-header { flex-direction: column; }
         }
     </style>
 </head>
@@ -286,15 +237,11 @@
 
     <div class="container">
         <header>
-            <h1>Mugilan </h1>
-            
-            <div class="role">Data Engineer | PySpark & Scalable Data Pipelines</div>
-            
+            <h1>Mugilan</h1>
+            <div class="role">Data Engineer | MLOps & Scalable Pipelines</div>
             <p class="tagline">
-                Expertise in designing <strong>scalable, cost-optimized data architectures</strong> on AWS and building <strong>high-efficiency ETL workflows</strong>.
-                <br>Specialized in performance optimization for both <strong>Cloud Lakehouses</strong> and <strong>Unstructured Data Processing</strong>.
+                Specialized in building <strong>production-grade data architectures</strong>, from serverless <strong>Azure FinOps</strong> solutions to <strong>Databricks Lakehouses</strong> and <strong>Airflow-orchestrated MLOps</strong> pipelines.
             </p>
-            
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/mugilan-m-49882531a/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/Mugil6" target="_blank"><i class="fab fa-github"></i></a>
@@ -303,95 +250,116 @@
         </header>
 
         <section id="projects">
-            <h2>01. Featured Projects</h2>
+            <h2>01. Featured Engineering Projects</h2>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">🌍 Real-Time Global Earthquake Data Lakehouse</h3>
+                    <h3 class="project-title">🌍 Real-Time Earthquake Data Lakehouse</h3>
                     <div class="project-links">
-                        <a href="https://github.com/Mugil6/earthquake-tracker" target="_blank"><i class="fab fa-github"></i> View Source Code</a>
+                        <a href="https://github.com/Mugil6/earthquake-tracker" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
-                
                 <div class="tech-stack">
-                    <span>PySpark</span>
-                    <span>Databricks</span>
-                    <span>Delta Lake</span>
+                    <span>PySpark</span><span>Databricks</span><span>Delta Lake</span><span>Medallion Architecture</span>
                 </div>
-
                 <div class="description">
-                    <p>Designed a <strong>Medallion Architecture</strong> (Bronze → Silver → Gold) to ingest live seismic data. 
-                    <br><strong>Key Engineering:</strong> Built a <strong>Databricks-native ingestion pipeline</strong> to fetch live API data, transforming <strong>complex nested GeoJSON</strong> into structured Delta tables for high-performance analytics.</p>
+                    <p>Designed a high-throughput <strong>Medallion Architecture</strong> to ingest live seismic data. 
+                    <br><strong>Key Engineering:</strong> Developed a native ingestion pipeline that flattens complex nested GeoJSON into optimized Delta tables, enabling high-performance spatial analytics.</p>
                 </div>
+                <img src="images/earthquake_arch.png" alt="Data Lakehouse Architecture" class="project-img">
+            </div>
 
-                <img src="images/earthquake_arch.png" alt="Data Lakehouse Architecture Diagram" class="project-img">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🌩️ Serverless AI "Virtual Sensor" Network</h3>
+                    <div class="project-links">
+                        <span style="color: var(--accent); font-size: 0.9rem;"><i class="fas fa-project-diagram"></i> System Architecture & Dashboard</span>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span>Azure Data Factory</span><span>Azure Functions</span><span>XGBoost</span><span>ADLS Gen2</span><span>FinOps</span>
+                </div>
+                <div class="description">
+                    <p>Built a <strong>Scale-to-Zero</strong> pipeline to forecast air quality across a 5km x 5km geospatial grid in Delhi NCR.
+                    <br><strong>Key Engineering:</strong> Achieved <strong><$0.50 monthly OpEx</strong> by utilizing Azure Consumption plans and serialized ML artifacts, eliminating the need for 24/7 compute clusters.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <img src="images/azure_arch.png" alt="Azure Architecture" class="project-img">
+                    <img src="images/azure_dashboard.png" alt="Streamlit Dashboard" class="project-img">
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">📈 Real-Time Economic Nowcasting (CPI)</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/Mugil6/inflation-monitor" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span>TensorFlow (LSTM)</span><span>Apache Airflow</span><span>Docker</span><span>Supabase</span><span>PostgreSQL</span>
+                </div>
+                <div class="description">
+                    <p>Automated MLOps pipeline for forecasting India’s CPI inflation with 92% directional accuracy.
+                    <br><strong>Key Engineering:</strong> Implemented a <strong>Stationary Delta-based LSTM</strong>. Orchestrated the full monthly lifecycle using <strong>Airflow</strong> and containerized environments for zero-drift deployments.</p>
+                </div>
+                <img src="images/cpi_architecture.png" alt="MLOps Pipeline" class="project-img">
+                <img src="images/cpi_dashboard.png" alt="Streamlit Inflation Dashboard" class="project-img">
             </div>
 
             <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">🛸 Autonomous Drone Perception System</h3>
                     <div class="project-links">
-                        <a href="https://github.com/Mugil6/deep_learning_model" target="_blank"><i class="fab fa-github"></i> View Source Code</a>
+                        <a href="https://github.com/Mugil6/deep_learning_model" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
-
                 <div class="tech-stack">
-                    <span>Python</span>
-                    <span>YOLOv8</span>
-                    <span>CUDA</span>
-                    <span>Edge Computing</span>
-                    <span>Computer Vision</span>
+                    <span>Python</span><span>YOLOv8</span><span>CUDA</span><span>Edge Computing</span><span>Computer Vision</span>
                 </div>
-
                 <div class="description">
-                    <p>
-                        Developed a real-time object detection and avoidance system for edge devices.
-                        <br><strong>Key Achievement:</strong> As seen in the output below, the system identifies objects (Cars/Buses) and calculates logic (<strong>"Action: Avoid"</strong>) in real-time while maintaining a stable <strong>17+ FPS</strong> on limited hardware using FP16 quantization.
-                    </p>
+                    <p>Real-time object detection and avoidance system optimized for hardware-constrained edge devices.
+                    <br><strong>Key Engineering:</strong> Achieved a stable <strong>17+ FPS</strong> on limited hardware using FP16 quantization and custom inference logic for collision avoidance.</p>
                 </div>
-
-                <img src="images/drone_output.png" alt="Drone Detection Output with FPS Counter" class="project-img">
+                <img src="images/drone_output.png" alt="Drone Detection Output" class="project-img">
             </div>
         </section>
 
         <section id="skills">
             <h2>02. Technical Arsenal</h2>
             <div class="skills-grid">
-                
                 <div class="skill-group">
-                    <h3>Languages & Frameworks</h3>
+                    <h3>Data Engineering</h3>
                     <ul class="skill-list">
-                        <li><i class="fab fa-python"></i> Python</li>
-                        <li><i class="fas fa-database"></i> SQL</li>
-                        <li><i class="fas fa-fire"></i> Apache Spark / PySpark</li>
+                        <li><i class="fas fa-fire"></i> PySpark & Delta Lake</li>
+                        <li><i class="fas fa-wind"></i> Apache Airflow</li>
+                        <li><i class="fas fa-database"></i> SQL (PostgreSQL, Redshift)</li>
+                        <li><i class="fas fa-layer-group"></i> Medallion Architecture</li>
                     </ul>
                 </div>
-                
                 <div class="skill-group">
-                    <h3>Cloud & Platforms (AWS)</h3>
+                    <h3>Cloud & MLOps</h3>
                     <ul class="skill-list">
-                        <li><i class="fab fa-aws"></i> AWS (S3, Lambda, EMR)</li>
-                        <li><i class="fas fa-layer-group"></i> Databricks & Delta Lake</li>
-                        <li><i class="fas fa-server"></i> Redshift / Data Warehousing</li>
-                        <li><i class="fas fa-search"></i> Athena & Glue</li>
+                        <li><i class="fab fa-aws"></i> AWS (S3, EMR, Lambda)</li>
+                        <li><i class="fab fa-microsoft"></i> Azure (ADF, Functions)</li>
+                        <li><i class="fab fa-docker"></i> Docker & Containerization</li>
+                        <li><i class="fas fa-brain"></i> TensorFlow & XGBoost</li>
                     </ul>
                 </div>
-
                 <div class="skill-group">
-                    <h3>Tools & DevOps</h3>
+                    <h3>Tools & Frontend</h3>
                     <ul class="skill-list">
                         <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
-                        <li><i class="fab fa-docker"></i> Docker (Containerization)</li>
-                        <li><i class="fas fa-wind"></i> Apache Airflow (Orchestration)</li>
-                        <li><i class="fas fa-terminal"></i> Linux / Shell Scripting</li>
+                        <li><i class="fas fa-chart-line"></i> Streamlit Analytics</li>
+                        <li><i class="fas fa-terminal"></i> Linux / Shell</li>
+                        <li><i class="fas fa-cloud"></i> Supabase (BaaS)</li>
                     </ul>
                 </div>
-                
             </div>
         </section>
 
         <footer>
-            <p>Designed & Built by Mugilan. © 2025</p>
+            <p>Designed & Built by Mugilan. © 2026</p>
         </footer>
     </div>
 
